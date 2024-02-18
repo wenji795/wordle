@@ -1,0 +1,113 @@
+.guess-area,
+.guesses-area {
+    display: flex;
+    flex-direction: column; /* 使猜测行竖直排列 */
+    align-items: center; /* 居中对齐猜测行 */
+    margin-top: 20px;
+}
+
+.guess-row {
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-direction: row; /* 横向排列字母槽 */
+    margin-bottom: 10px; /* 在猜测行之间添加一些间隔 */
+}
+
+.guess-slot {
+    border: 1px solid #666; /* 边框样式 */
+    width: 40px; /* 字母槽宽度 */
+    height: 60px; /* 字母槽高度 */
+    margin: 0 5px; /* 字母槽之间的间隔 */
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    font-size: 32px; /* 字体大小 */
+    text-transform: uppercase; /* 大写字母 */
+}
+
+
+.keyboard-ctn {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: flex-end;
+    /* height: 100vh; */
+    padding-top: 20px;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.keyboard-module {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.keyboard_row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.keyboard_key, .keyboard_spcial_key {
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
+
+.keyboard_key:hover {
+    background-color: #e0e0e0; /* 鼠标悬停时的颜色 */
+}
+
+.spacer {
+    flex: 1;
+  }
+  
+.keyboard_spcial_key {
+    background-color: #3498db;
+    color: #fff;
+    flex: 0 0 20px; 
+  }
+
+.enter_key.disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+}
+
+.shake-animation {
+    animation: shake 0.5s ease-in-out;
+}
+
+
+.correct-letter {
+    background-color: green;
+}
+
+.present-letter {
+    background-color: orange;
+}
+
+.absent-letter {
+    background-color: grey;
+}
